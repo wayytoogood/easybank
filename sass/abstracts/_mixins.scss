@@ -1,0 +1,95 @@
+@mixin flexCenter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin absCenter {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@mixin gridCenter {
+  display: grid;
+  place-items: center;
+}
+
+@mixin gridColumn($cc, $cw, $g: 0) {
+  display: grid;
+  grid-template-columns: repeat($cc, $cw);
+  gap: $g;
+}
+
+@mixin gridLayout($cols, $g: 0) {
+  display: grid;
+  grid-template-columns: $cols;
+  gap: $g;
+}
+
+@mixin sectionCenter($w, $mw: 1170px) {
+  width: $w;
+  max-width: $mw;
+  margin: 0 auto;
+}
+
+@mixin leftPseudo($left, $top, $width, $height, $bc) {
+  content: '';
+  position: absolute;
+  top: $top;
+  left: $left;
+  width: $width;
+  height: $height;
+  background: $bc;
+}
+
+@mixin rightPseudo($right, $top, $width, $height, $bc) {
+  content: '';
+  position: absolute;
+  top: $top;
+  right: $right;
+  width: $width;
+  height: $height;
+  background: $bc;
+}
+
+/*
+MEDIA QUERIES
+
+576, 768, 992, 1200 => Bootsrap
+
+640, 768, 1024, 1536 => Tailwind
+
+*/
+
+$bp-u: (
+  small: 576px,
+  medium: 768px,
+  large: 992px,
+  elarge: 1200px,
+);
+$bp-d: (
+  small: 575px,
+  medium: 767px,
+  large: 991px,
+  elarge: 1199px,
+);
+
+@mixin respond($bp) {
+  @media only screen and (min-width: $bp) {
+    @content;
+  }
+}
+
+@mixin bp-u($bp) {
+  @media only screen and (min-width: map-get($bp-u, $bp)) {
+    @content;
+  }
+}
+
+@mixin bp-d($bp) {
+  @media only screen and (max-width: map-get($bp-d, $bp)) {
+    @content;
+  }
+}

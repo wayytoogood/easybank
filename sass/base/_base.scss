@@ -1,0 +1,96 @@
+/*
+===============
+Variables
+===============
+*/
+:root {
+  font-size: 62.5%;
+  --clr-grey-1: hsl(209, 61%, 16%);
+  --clr-grey-2: hsl(211, 39%, 23%);
+  --clr-grey-3: hsl(209, 35%, 30%);
+  --clr-grey-4: hsl(209, 28%, 39%);
+  --clr-grey-5: hsl(209, 22%, 49%);
+  --clr-grey-6: hsl(209, 23%, 60%);
+  --clr-grey-7: hsl(211, 27%, 70%);
+  --clr-grey-8: hsl(210, 31%, 80%);
+  --clr-grey-9: hsl(213, 32%, 89%);
+  --clr-grey-10: hsl(206, 33%, 96%);
+
+  --clr-dark-blue: hsl(233, 26%, 24%);
+  --clr-lime-green: hsl(136, 65%, 51%);
+  --clr-bright-cyan: hsl(192, 70%, 51%);
+
+  --clr-gray: hsl(233, 8%, 62%);
+  --clr-light-gray: hsl(220, 16%, 96%);
+  --clr-very-light-gray: hsl(0, 0%, 98%);
+  --clr-white: hsl(0, 0%, 100%);
+
+  --ff: 'Public Sans', sans-serif;
+
+  --transition: all 0.3s ease-in-out;
+  --spacing: 0.2rem;
+  --radius: 0.5rem;
+  --very-light-shadow: 0px 5px 10px 0px rgba(15, 67, 51, 0.1);
+  --light-shadow: 0px 5px 10px 0px rgba(15, 67, 51, 0.2);
+  --dark-shadow: 0px 10px 20px 0px rgba(15, 67, 51, 0.3);
+}
+/*
+===============
+Default Styles
+===============
+*/
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: var(--ff);
+  background: var(--clr-white);
+  color: var(--clr-grey-1);
+  font-size: 1.5rem;
+  line-height: 1.15;
+  overflow-x: hidden;
+}
+::selection {
+  color: var(--clr-lime-green);
+}
+a {
+  text-decoration: none;
+}
+ul {
+  list-style-type: none;
+}
+img {
+  width: 100%;
+  display: block;
+}
+button {
+  display: inline-block;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+}
+button:hover,
+input:hover {
+  outline: none;
+}
+/*
+======================
+Global Project Styles
+======================
+*/
+.section {
+  padding: 7rem 0 8rem;
+
+  @include bp-u(large) {
+    padding: 8rem 0 9rem;
+  }
+}
+.section-center {
+  width: 90vw;
+  margin: 0 auto;
+  max-width: 1240px;
+}

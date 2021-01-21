@@ -1,0 +1,41 @@
+.btn {
+  display: inline-block;
+  padding: 1.45rem 3.1rem;
+  border-radius: 3rem;
+  background: linear-gradient(
+    90deg,
+    var(--clr-lime-green),
+    var(--clr-bright-cyan) 85%
+  );
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+
+  &__text {
+    color: var(--clr-white);
+    position: relative;
+    z-index: 3;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    z-index: 2;
+    border-radius: 3rem;
+    right: 0;
+    top: 0;
+    width: 0;
+    height: 100%;
+    background: linear-gradient(
+      270deg,
+      var(--clr-lime-green),
+      var(--clr-bright-cyan) 85%
+    );
+    transition: width 0.4s;
+  }
+
+  &:hover::after,
+  &:focus::after {
+    width: 100%;
+  }
+}

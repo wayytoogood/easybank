@@ -1,0 +1,62 @@
+.articles {
+  background-color: var(--clr-very-light-gray);
+
+  &__center {
+    margin-top: 3rem;
+    display: grid;
+    row-gap: 3rem;
+
+    @include bp-u(medium) {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 3rem;
+      margin-top: 4rem;
+    }
+
+    @include bp-u(large) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    @include bp-u(elarge) {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+
+  &__item {
+    background-color: var(--clr-white);
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+  }
+
+  &__img {
+    height: 22rem;
+    object-fit: cover;
+  }
+
+  &__info {
+    padding: 2.5rem;
+  }
+
+  &__tutor {
+    color: var(--clr-gray);
+    font-size: 1.3rem;
+  }
+
+  &__title {
+    font-size: 2.1rem;
+    transition: var(--transition);
+    cursor: pointer;
+
+    &:hover {
+      color: var(--clr-lime-green);
+    }
+
+    @include bp-u(elarge) {
+      margin-bottom: 1.4rem;
+    }
+  }
+
+  &__text {
+    line-height: 1.35;
+  }
+}
